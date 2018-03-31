@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { ModalWrapper, ModalDialog, ModalContent } from './Modal.styled';
 
