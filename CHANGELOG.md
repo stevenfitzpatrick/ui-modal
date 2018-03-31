@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/stevenfitzpatrick/ui-modal/compare/v1.1.0...v1.1.1) (2018-03-31)
+
+
+### Bug Fixes
+
+* **core:** Some Modal Logic ([7ad5cdc](https://github.com/stevenfitzpatrick/ui-modal/commit/7ad5cdc))
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/stevenfitzpatrick/ui-modal/compare/v1.0.4...v1.1.0) (2018-03-31)
 
