@@ -12,8 +12,8 @@ storiesOf('Modal', module)
   .add('A basic Modal', () => {
     return (
       <div className="m-8">
-        sasasd
-        <Modal loading={false} />
+        <button>Open Dialog</button>
+        <Modal>Some Content for the Modal</Modal>
       </div>
     );
   });
