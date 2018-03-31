@@ -4,7 +4,11 @@ import { ModalWrapper, ModalDialog, ModalContent } from './Modal.styled';
 
 export class Modal extends React.Component {
   render() {
-    return <dialog />;
+    return (
+      <div className="wrapper">
+        <dialog />
+      </div>
+    );
   }
 }
 
