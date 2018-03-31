@@ -1,0 +1,45 @@
+{
+  "name": "@sfitzpatrick/ui-modal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap -- --hoist",
+    "updated": "lerna updated",
+    "publish": "lerna publish --conventional-commits",
+    "storybook": "start-storybook -p 8085 -c .storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenfitzpatrick/ui-modal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenfitzpatrick/ui-modal/issues"
+  },
+  "homepage": "https://github.com/stevenfitzpatrick/ui-modal#readme",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.0",
+    "@storybook/addon-info": "^3.4.0",
+    "@storybook/addon-knobs": "^3.4.0",
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/addons": "^3.4.0",
+    "@storybook/react": "^3.4.0",
+    "babel-core": "^6.26.0",
+    "glob-loader": "^0.3.0",
+    "lerna": "^2.9.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^3.2.5"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.3.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  }
+}
