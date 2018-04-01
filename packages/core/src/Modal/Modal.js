@@ -1,35 +1,72 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { ModalWrapper, ModalDialog, ModalContent } from './Modal.styled';
+import { CloseButton, ModalDialog, ModalContent } from './Modal.styled';
 
 export class Modal extends React.Component {
   ref = createRef();
+  refContent = createRef();
 
-  componentDidUpdate({ show }, prevState) {
-    debugger; //eslint-disable-line
-    if (show) {
-      this.openDialog();
-    } else {
-      this.closeDialog();
-    }
+  componentDidMount() {
+    document.addEventListener('click', this.handleOutsideClick, false);
+    window.addEventListener('keydown', this.handleKeyUp, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideClick, false);
+    window.addEventListener('keydown', this.handleKeyUp, false);
   }
 
   closeDialog = () => this.ref.current.close();
 
   openDialog = () => this.ref.current.showModal();
 
+  handleOutsideClick = e => {
+    if (!this.refContent.current.contains(e.target)) {
+      console.log(this.refContent.current, e.target);
+      //this.props.onClose();
+      //document.removeEventListener('click', this.handleOutsideClick, false);
+    }
+  };
+
+  handleKeyUp = e => {
+    const { onClose } = this.props;
+    const keys = {
+      27() {
+        e.preventDefault();
+        onClose();
+        window.removeEventListener('keydown', this.handleKeyUp, false);
+      }
+    };
+
+    if (keys[e.keyCode]) {
+      keys[e.keyCode]();
+    }
+  };
+
+  componentDidUpdate({ show }, prevState) {
+    console.log(show, this.props.show);
+
+    if (show !== this.props.show) {
+      if (this.props.show) {
+        this.openDialog();
+      } else {
+        this.closeDialog();
+      }
+    }
+  }
+
   render() {
-    const { children, onClose } = this.props;
+    const { children, onClose, show } = this.props;
     return (
-      <div className="wrapper">
-        <dialog ref={this.ref}>
-          <button type="button" onClick={onClose}>
+      <ModalDialog innerRef={this.ref}>
+        <ModalContent innerRef={this.refContent} className="modal-content">
+          <CloseButton type="button" onClick={onClose}>
             close
-          </button>
+          </CloseButton>
           {children}
-        </dialog>
-      </div>
+        </ModalContent>
+      </ModalDialog>
     );
   }
 }
