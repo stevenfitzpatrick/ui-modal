@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/stevenfitzpatrick/ui-modal/compare/v1.1.1...v1.2.0) (2018-04-01)
+
+
+### Features
+
+* **core:** Adding Storybook setup for modal ([4d737dc](https://github.com/stevenfitzpatrick/ui-modal/commit/4d737dc))
+
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/stevenfitzpatrick/ui-modal/compare/v1.1.0...v1.1.1) (2018-03-31)
 
